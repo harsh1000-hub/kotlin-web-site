@@ -32,7 +32,6 @@ from src.processors.processors import process_code_blocks
 from src.processors.processors import set_replace_simple_code
 from src.search import build_search_indices
 from src.sitemap import generate_sitemap
-# from src.ktl_components import ktl_component
 from src.ktl_components import KTLComponentExtension
 
 app = Flask(__name__, static_folder='_assets')
@@ -141,12 +140,6 @@ def add_year_to_context():
     return {
         'year': datetime.datetime.now().year
     }
-
-# @app.context_processor
-# def add_ktl_to_context():
-#     return {
-#         "ktl_component": ktl_component
-#     }
 
 
 app.jinja_env.add_extension(KTLComponentExtension)
